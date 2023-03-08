@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './ukazatel-uspechu.css'
 
 // Zadání 1: Použij prop `barva` ve style atributu.
@@ -7,18 +7,19 @@ import './ukazatel-uspechu.css'
 // Zadání 4. Nastav prvku `ukazatel-uspechu__postup` šířku podle stavové proměnné.
 
 const UkazatelPokroku = ({ barva }) => {
+	const [state, setState] = useState(0);
 	return (
 		<div className="ukazatel-uspechu">
 			<div className="ukazatel-uspechu__ramecek">
 				<div
 					className="ukazatel-uspechu__postup"
 					style={{
-						width: '40%',
-						backgroundColor: 'red',
+						width: `${state}%`,
+						backgroundColor: barva,
 					}}
 				></div>
 			</div>
-			<button>postoupit o 10 %</button>
+			<button onClick={() => {state >= 100 ? null : setState(state + 10)}}>postoupit o 10 %</button>
 		</div>
 	)
 }

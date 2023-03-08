@@ -7,10 +7,13 @@ import { useCasVSekundach } from './hodiny'
 
 export const ZaverecnyBonus3 = () => {
 	const casVSekundach = useCasVSekundach()
-
+	let hodiny = Math.floor(casVSekundach/3600);
+	let minuty = Math.floor(casVSekundach%3600 / 60);
+	let sekundy = casVSekundach%60;
+	
 	return (
 		<>
-			Čas právě teď: <b>{casVSekundach}</b>
+			Čas právě teď: <b>{hodiny} : {minuty} : {sekundy}</b>
 		</>
 	)
 }

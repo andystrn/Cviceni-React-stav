@@ -14,3 +14,7 @@
 .ukol--splnen .ukol__nazev {
 	text-decoration: line-through;
 }
+
+.no--visible {
+	display: none;
+}
